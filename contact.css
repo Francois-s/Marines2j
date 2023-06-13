@@ -1,0 +1,117 @@
+@font-face {
+    font-family: 'Copperplate-Light';
+    src: url('fonts/copperplate-light.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: "copperplate-light", sans-serif;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 40px;
+}
+
+.logo_insta {
+    height: 150px;
+    padding-top: 20px;
+}
+
+.insta_h2 {
+    color: white;
+}
+
+.block_contact {
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+    
+}
+
+
+.navMenu {
+    font-family: "copperplate-light", sans-serif;
+    position: absolute;
+    left: 50%;
+    padding-top: 100px;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+}
+
+.navMenu a {
+    color: #f6f4e6;
+    text-decoration: none;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: inline-block;
+    width: 80px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.navMenu a:hover {
+    color: #ac0505;
+}
+
+.navMenu .dot {
+    width: 6px;
+    height: 6px;
+    background: #ac0505;
+    border-radius: 50%;
+    opacity: 0;
+    -webkit-transform: translateX(30px);
+    transform: translateX(30px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.navMenu a:nth-child(1):hover~.dot {
+    -webkit-transform: translateX(30px);
+    transform: translateX(30px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+}
+
+.navMenu a:nth-child(2):hover~.dot {
+    -webkit-transform: translateX(110px);
+    transform: translateX(110px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+}
+
+.navMenu a:nth-child(3):hover~.dot {
+    -webkit-transform: translateX(200px);
+    transform: translateX(200px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+}
+
+.contact_h1 {
+    padding-top: 100px;
+}
+
+.bar {
+    height: 2px;
+    width: 400px;
+    position: absolute;
+    margin-left: 38%;
+    margin-right: 38%;
+
+    margin-top: 80px;
+    background-color: white;
+}
