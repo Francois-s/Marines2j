@@ -109,3 +109,24 @@ body {
 .card:hover {
     transform: scale(1.1);
 }
+
+@media screen and (max-width: 768px) {
+    .navMenu {
+        padding-top: 50px; /* Reduce top padding for mobile */
+    }
+
+    .navMenu a {
+        font-size: 1em; /* Reduce font size for mobile */
+        width: auto; /* Adjust width for mobile */
+    }
+
+    .book_h1 {
+        font-size: 30px; /* Adjust font size for mobile */
+    }
+
+    .card {
+        margin: 20px; /* Reduce card margin for mobile */
+        width: 150px; /* Reduce card width for mobile */
+        height: 225px; /* Reduce card height for mobile */
+    }
+}

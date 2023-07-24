@@ -59,13 +59,16 @@ body {
 
 .navMenu {
     font-family: "copperplate-light", sans-serif;
-    position: absolute;
     left: 50%;
-    padding-top: 100px;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    font-size: 20px;
+    position: relative;
+    margin-top: 15px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 
 .navMenu a {
     color: #f6f4e6;
@@ -73,52 +76,24 @@ body {
     font-size: 1.2em;
     text-transform: uppercase;
     font-weight: 500;
-    display: inline-block;
-    width: 80px;
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    margin-left: 10px;
-
+    margin: 0 20px; /* Add space between menu links */
+    position: relative;
 }
 
-.navMenu a:hover {
-    color: #ac0505;
+.navMenu a:before {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Adjust the distance of the underline from the text */
+    left: 0;
+    width: 0%;
+    height: 2px; /* Adjust the thickness of the underline */
+    background-color: #ac0505; /* Set the color of the underline */
+    -webkit-transition: width 0.3s; /* Add a transition effect for the underline */
+    transition: width 0.3s; /* Add a transition effect for the underline */
 }
 
-.navMenu .dot {
-    width: 6px;
-    height: 6px;
-    background: #ac0505;
-    border-radius: 50%;
-    opacity: 0;
-    -webkit-transform: translateX(30px);
-    transform: translateX(30px);
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-}
-
-.navMenu a:nth-child(1):hover~.dot {
-    -webkit-transform: translateX(30px);
-    transform: translateX(30px);
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    opacity: 1;
-}
-
-.navMenu a:nth-child(2):hover~.dot {
-    -webkit-transform: translateX(110px);
-    transform: translateX(110px);
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    opacity: 1;
-}
-
-.navMenu a:nth-child(3):hover~.dot {
-    -webkit-transform: translateX(200px);
-    transform: translateX(200px);
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    opacity: 1;
+.navMenu a:hover:before {
+    width: 100%; /* Expand the underline to 100% on hover */
 }
 
 /* CSS dans book.css */
@@ -168,4 +143,25 @@ body {
 
 .arrow.right {
     right: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .navMenu {
+        padding-top: 50px; /* Réduire la marge supérieure pour mobile */
+    }
+
+    .navMenu a {
+        font-size: 0.6em; /* Réduire la taille de police pour mobile */
+        width: auto; /* Ajuster la largeur pour mobile */
+    }
+
+    .book_h1 {
+        font-size: 30px; /* Ajuster la taille de police pour mobile */
+        padding-top: 30px;
+    }
+
+    .card {
+        width: 180px;
+        height: 200px;
+    }
 }

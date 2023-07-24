@@ -18,14 +18,13 @@ body {
 }
 
 .main_logo {
-    height: 150px;
+    height: 250px;
 }
 
 .main_h1 {
     font-size: 100px;
     font-weight: 500;
     margin-bottom: 0px;
-    margin-top: 20px;
 }
 
 .second_h1 {
@@ -41,71 +40,59 @@ body {
 .bar {
     height: 2px;
     width: 400px;
+    margin-top: 30px;
     background-color: white;
     margin-left: auto;
     margin-right: auto;
 }
 
+/* Styles for the new menu animation */
 .navMenu {
     font-family: "copperplate-light", sans-serif;
-    position: absolute;
     left: 50%;
-    padding-top: 100px;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    position: relative;
+    margin-top: 80px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 
 .navMenu a {
     color: #f6f4e6;
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 3em;
     text-transform: uppercase;
     font-weight: 500;
-    display: inline-block;
-    width: 80px;
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
+    margin: 0 20px;
+    /* Add space between menu links */
+    position: relative;
 }
 
-.navMenu a:hover {
-    color: #ac0505;
+.navMenu a:before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    /* Adjust the distance of the underline from the text */
+    left: 0;
+    width: 0%;
+    height: 2px;
+    /* Adjust the thickness of the underline */
+    background-color: #ac0505;
+    /* Set the color of the underline */
+    -webkit-transition: width 0.3s;
+    /* Add a transition effect for the underline */
+    transition: width 0.3s;
+    /* Add a transition effect for the underline */
 }
 
-.navMenu .dot {
-    width: 6px;
-    height: 6px;
-    background: #ac0505;
-    border-radius: 50%;
-    opacity: 0;
-    -webkit-transform: translateX(30px);
-    transform: translateX(30px);
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
+.navMenu a:hover:before {
+    width: 100%;
+    /* Expand the underline to 100% on hover */
 }
 
-.navMenu a:nth-child(1):hover~.dot {
-    -webkit-transform: translateX(30px);
-    transform: translateX(30px);
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    opacity: 1;
-}
-
-.navMenu a:nth-child(2):hover~.dot {
-    -webkit-transform: translateX(110px);
-    transform: translateX(110px);
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    opacity: 1;
-}
-
-.navMenu a:nth-child(3):hover~.dot {
-    -webkit-transform: translateX(200px);
-    transform: translateX(200px);
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    opacity: 1;
-}
 
 .landing_pic {
     display: flex;
@@ -120,4 +107,48 @@ body {
 .landing_pic img {
     height: 500px;
     padding-right: 20px;
+}
+
+@media screen and (max-width: 900px) {
+    .main_h1 {
+        font-size: 60px;
+    }
+
+    .second_h1 {
+        font-size: 30px;
+    }
+
+    .main_h2 {
+        font-size: 40px;
+    }
+
+    .bar {
+        width: 200px;
+        margin-top: 20px;
+    }
+
+    .navMenu a {
+        font-size: 1.5em;
+        width: auto;
+        margin: 0 8px;
+    }
+
+    .landing_pic {
+        flex-wrap: wrap;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .landing_pic img {
+        height: auto;
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .navMenu {
+        margin-top: 50px;
+    }
 }
