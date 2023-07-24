@@ -23,15 +23,18 @@ body {
     text-align: center;
 }
 
+/* Styles for the new menu animation */
 .navMenu {
     font-family: "copperplate-light", sans-serif;
-    position: absolute;
-    left: 50%;
-    padding-top: 100px;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    font-size: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    width: 100%;
+    padding-top: 30px;
 }
+
 
 .navMenu a {
     color: #f6f4e6;
@@ -39,56 +42,35 @@ body {
     font-size: 1.2em;
     text-transform: uppercase;
     font-weight: 500;
-    display: inline-block;
-    width: 80px;
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    margin-left: 10px;
-
+    margin: 0 20px;
+    /* Add space between menu links */
+    position: relative;
 }
 
-.navMenu a:hover {
-    color: #ac0505;
+.navMenu a:before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    /* Adjust the distance of the underline from the text */
+    left: 0;
+    width: 0%;
+    height: 2px;
+    /* Adjust the thickness of the underline */
+    background-color: #ac0505;
+    /* Set the color of the underline */
+    -webkit-transition: width 0.3s;
+    /* Add a transition effect for the underline */
+    transition: width 0.3s;
+    /* Add a transition effect for the underline */
 }
 
-.navMenu .dot {
-    width: 6px;
-    height: 6px;
-    background: #ac0505;
-    border-radius: 50%;
-    opacity: 0;
-    -webkit-transform: translateX(30px);
-    transform: translateX(30px);
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-}
-
-.navMenu a:nth-child(1):hover~.dot {
-    -webkit-transform: translateX(30px);
-    transform: translateX(30px);
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    opacity: 1;
-}
-
-.navMenu a:nth-child(2):hover~.dot {
-    -webkit-transform: translateX(110px);
-    transform: translateX(110px);
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    opacity: 1;
-}
-
-.navMenu a:nth-child(3):hover~.dot {
-    -webkit-transform: translateX(200px);
-    transform: translateX(200px);
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    opacity: 1;
+.navMenu a:hover:before {
+    width: 100%;
+    /* Expand the underline to 100% on hover */
 }
 
 .book_h1 {
-    padding-top: 100px;
+    padding-top: 50px;
     font-size: 100px;
 }
 
@@ -110,23 +92,27 @@ body {
     transform: scale(1.1);
 }
 
-@media screen and (max-width: 768px) {
-    .navMenu {
-        padding-top: 50px; /* Reduce top padding for mobile */
-    }
 
+@media screen and (max-width: 768px) {
     .navMenu a {
-        font-size: 1em; /* Reduce font size for mobile */
-        width: auto; /* Adjust width for mobile */
+        font-size: 0.8em;
+        padding-top: 0px;
+        width: auto;
+        /* Adjust width for mobile */
     }
 
     .book_h1 {
-        font-size: 30px; /* Adjust font size for mobile */
+        font-size: 30px;
+        padding-top: 30px;
+        /* Adjust font size for mobile */
     }
 
     .card {
-        margin: 20px; /* Reduce card margin for mobile */
-        width: 150px; /* Reduce card width for mobile */
-        height: 225px; /* Reduce card height for mobile */
+        margin: 20px;
+        /* Reduce card margin for mobile */
+        width: 150px;
+        /* Reduce card width for mobile */
+        height: 225px;
+        /* Reduce card height for mobile */
     }
 }
