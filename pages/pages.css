@@ -43,7 +43,12 @@ body {
     width: 300px;
     height: 450px;
     object-fit: cover;
+    transition-duration: 500ms;
 
+}
+
+.card:hover {
+    transform: scale(1.05);
 }
 
 .book_h1 {
