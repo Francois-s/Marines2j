@@ -12,8 +12,8 @@ def generate_image_tags(directory):
     return image_tags
 
 # Remplacez le chemin du dossier ci-dessous par le dossier souhaité
-directory_path = 'shooting/Chiara'
-directory_name = 'Chiara'  # Remplacez par le nom du dossier
+directory_path = '../shooting/Arianne'
+directory_name = 'louison'  # Remplacez par le nom du dossier
 
 image_tags = generate_image_tags(directory_path)
 print(image_tags)
